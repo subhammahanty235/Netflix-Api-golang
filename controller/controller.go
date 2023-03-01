@@ -107,8 +107,8 @@ func getAllMovies() []primitive.M {
 }
 
 func getOneMovie(id string) model.Netflix {
-
-	filter := bson.M{"_id": id}
+	movieid := primitive.ObjectIDFromHex(id)
+	filter := bson.M{"_id": movieid}
 	fmt.Println(filter)
 	var movie model.Netflix
 	fmt.Println("1")
